@@ -1,0 +1,51 @@
+{
+    "configurations": [
+        {
+            "name": "STM32F767 NUCLEO-144",
+            "includePath": [
+                "${workspaceFolder}/../asp_baseplatform",
+                "${workspaceFolder}/../asp_baseplatform/arch",
+                "${workspaceFolder}/../asp_baseplatform/arch/arm_m_gcc/common",
+                "${workspaceFolder}/../asp_baseplatform/arch/arm_m_gcc/stm32f7xx",
+                "${workspaceFolder}/../asp_baseplatform/arch/gcc",
+                "${workspaceFolder}/../asp_baseplatform/files",
+                "${workspaceFolder}/../asp_baseplatform/files/ff",
+                "${workspaceFolder}/../asp_baseplatform/include",
+                "${workspaceFolder}/../asp_baseplatform/target/stm32f767nucleo144_gcc",
+                "${workspaceFolder}/../asp_baseplatform/tecs_kernel",
+                "${workspaceFolder}/../asp_baseplatform/pdic/stm32f7xx",
+                "${workspaceFolder}/../asp_baseplatform/monitor",
+                "${workspaceFolder}/../asp_baseplatform/lwip",
+                "${workspaceFolder}/../asp_baseplatform/lwip/lwip-2.1.2/src/include",
+                "${workspaceFolder}/../asp_baseplatform/lwip/contrib-2.1.0/ports/toppers/include",
+                "${workspaceFolder}/../asp_baseplatform/lwip/contrib-2.1.0",
+                "${workspaceFolder}/../wolfssl-3.15.7",
+                "${workspaceFolder}/../wolfssl-3.15.7/wolfssl",
+                "${workspaceFolder}/../wolfssl-3.15.7/wolfssl/wolfcrypt",
+                "${workspaceFolder}/../zlib-1.2.11/src",
+                "${workspaceFolder}/../azure_iothub/c-utility/adapters",
+                "${workspaceFolder}/../azure_iothub/c-utility/inc",
+                "${workspaceFolder}/../azure_iothub/c-utility/pal/toppers",
+                "${workspaceFolder}/../azure_iothub/certs",
+                "${workspaceFolder}/../azure_iothub/deps",
+                "${workspaceFolder}/../azure_iothub/deps/parson",
+                "${workspaceFolder}/../azure_iothub/deps/azure-macro-utils-c/inc",
+                "${workspaceFolder}/../azure_iothub/deps/umock-c/inc",
+                "${workspaceFolder}/../azure_iothub/serializer/inc",
+                "${workspaceFolder}/../azure_iothub/iothub_client/inc",
+                "${workspaceFolder}/../azure_iothub/provisioning_client/inc",
+                "${workspaceFolder}/pinkit",
+                "${workspaceFolder}/src",
+                "${workspaceFolder}/Debug"
+            ],
+            "defines": [
+            ],
+            "windowsSdkVersion": "10.0.17763.0",
+            "compilerPath": "C:\\Program Files (x86)\\GNU Tools ARM Embedded\\9 2019-q4-major\\bin\\arm-none-eabi-gcc.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "gcc-x64"
+        }
+    ],
+    "version": 4
+}

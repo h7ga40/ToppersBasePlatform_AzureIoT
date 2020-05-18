@@ -1,0 +1,23 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Cortex Debug",
+            "armToolchainPath": "C:\\Program Files (x86)\\GNU Tools ARM Embedded\\9 2019-q4-major\\bin",
+            "serverpath": "C:\\Program Files\\GNU MCU Eclipse\\OpenOCD\\0.10.0-12-20190422-2015\\bin\\openocd.exe",
+            "cwd": "${workspaceRoot}\\OBJ\\STM32F767NUCLEO144_GCC\\MAC",
+            "executable": "${workspaceRoot}\\OBJ\\STM32F767NUCLEO144_GCC\\MAC\\asp.exe",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "openocd",
+            "configFiles": [
+                "interface/stlink-v2-1.cfg",
+                "target/stm32f7x.cfg"
+            ],
+            "openOCDLaunchCommands": [
+                "gdb_memory_map disable"
+            ],
+            "preLaunchTask": "build asp_baseplatform"
+        }
+    ]
+}
