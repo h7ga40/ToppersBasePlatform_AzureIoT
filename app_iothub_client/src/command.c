@@ -36,11 +36,11 @@ static const COMMAND_INFO device_command_info[] = {
 #endif
 	{"CUP",		cup_func},
 	{"IOT",		iothub_client_main},
-	{"CS",		set_cs_main},
 	{"CSGEN",	dps_csgen_main},
+	{"CS",		set_cs_main},
 	{"PROXY",	set_proxy_main},
 	{"CPRX",	clear_proxy_main},
-	{"PIN",		pinkit_main},
+	{"PINKIT",	pinkit_main},
 };
 
 #define NUM_DEVICE_CMD   (sizeof(device_command_info)/sizeof(COMMAND_INFO))
@@ -58,7 +58,7 @@ static const char device_help[] =
 "          CSGEN               provision device\n"
 "          PROXY                  set proxy    \n"
 "          CPRX                   clear proxy  \n"
-"          PIN                    test pinkit  \n";
+"          PINKIT                 test pinkit  \n";
 
 static const uint16_t led_pattern[4] = {
 	LED01, LED02, LED03, LED04
