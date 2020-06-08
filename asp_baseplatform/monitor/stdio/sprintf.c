@@ -68,3 +68,14 @@ sprintf(char * buffer, const char * format, ...)
     return count;
 }
 
+int
+vsprintf(char * buffer, const char * format, va_list args)
+{
+    int count;
+    char * pbuffer = buffer;
+
+    count = _setformat(putz, &pbuffer, format, args);
+    *pbuffer = 0;
+    return count;
+}
+

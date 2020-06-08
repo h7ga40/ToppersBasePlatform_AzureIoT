@@ -60,12 +60,13 @@
  * followed by a three-character attempt at a mnemonic.
  */
 #ifndef _STDIO_H_
+#define	_STDIO_H_
+
 #ifdef __cplusplus
 extern "C" {
 #endif
-#define	_STDIO_H_
 
-#define __need___va_list
+//#define __need___va_list
 #include <stdarg.h>
 
 #define	_SMALL_STDIO_
@@ -137,14 +138,16 @@ extern FILE _iob[];
 #define __VALIST char*
 #endif
 
-int	fgetc(FILE *);
+int fgetc(FILE *);
 int fgets(char *, int, FILE *);
 int fputc(int, FILE *);
 int fputs(const char *, FILE *);
-int	putchar(int);
-int	puts(const char *);
-int	printf(const char *, ...);
-int	sprintf(char *, const char *, ...);
+int putchar(int);
+int puts(const char *);
+int printf(const char *, ...);
+int vprintf(const char *, va_list args);
+int sprintf(char *, const char *, ...);
+int vsprintf(char *, const char *, va_list args);
 int snprintf(char *, size_t, const char *, ...);
 int scanf(const char *, ...);
 int sscanf(char *, const char *, ...);
@@ -155,7 +158,8 @@ size_t fread(void *, size_t, size_t, FILE *);
 size_t fwrite(const void *, size_t, size_t, FILE *);
 int fseek(FILE *, long, int);
 long ftell(FILE *);
-int	fprintf(FILE *, const char *, ...);
+int fprintf(FILE *, const char *, ...);
+int vfprintf(FILE *, const char *, va_list args);
 
 #define	feof(p)     (((p)->_flags & __SEOF) != 0)
 #define	ferror(p)   (((p)->_flags & __SERR) != 0)
@@ -169,9 +173,6 @@ int	fprintf(FILE *, const char *, ...);
  */
 #define gets(s)                         puts("NOT SUPPORT gets !\n")
 #define ungetc(c, st)                   puts("NOT SUPPORT ungetc !\n")
-#define vprintf(format, ap)             puts("NOT SUPPORT vprintf !\n")
-#define vfprintf(st, format, ap)        puts("NOT SUPPORT vfprintf !\n")
-#define vsprintf(s, format, ap)         puts("NOT SUPPORT vsprintf !\n")
 #if !defined(__cplusplus) && defined(__GNUC__)
 #define fscanf(st, format, ...)         puts("NOT SUPPORT fscanf !\n")
 #endif

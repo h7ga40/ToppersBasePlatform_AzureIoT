@@ -58,3 +58,9 @@ fprintf(FILE *st, const char *format, ...)
     return _setformat(fputc, st, format, args);
 }
 
+int
+vfprintf(FILE *st, const char *format, va_list args)
+{
+    return _setformat(fputc, st, format, args);
+}
+

@@ -265,8 +265,16 @@ static void putzi (char c, char ** p)
 
 int printf (const char * format, ...)
 {
-    va_list args;
-    va_start(args, format);
-    return (_setformat(putzi, NULL, format, args));
+	va_list args;
+	va_start(args, format);
+	int ret = (_setformat(putzi, NULL, format, args));
+	va_end(args);
+	return ret;
+}
+
+
+int vprintf (const char * format, va_list args)
+{
+	return (_setformat(putzi, NULL, format, args));
 }
 
