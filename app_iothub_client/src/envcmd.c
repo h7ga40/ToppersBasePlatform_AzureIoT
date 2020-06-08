@@ -251,9 +251,14 @@ int clear_proxy_main(int argc, char **argv)
 int pinkit_main(int argc, char **argv)
 {
 	for (;;) {
-		printf("x:%0.3f, y:%0.3f, z:%0.3f, temp:%0.1f\n",
-			pinkit.accel.X, pinkit.accel.Y, pinkit.accel.Z,
-			pinkit.temperature);
+		int x = (int)(pinkit.accel.X * 1000);
+		int y = (int)(pinkit.accel.Y * 1000);
+		int z = (int)(pinkit.accel.Z * 1000);
+		int temp = (int)(pinkit.temperature * 1000);
+		int humi = (int)(pinkit.humidity * 1000);
+		printf("x:%d.%03d, y:%d.%03d, z:%d.%03d, temperature:%d.%03d, humidity %d.%03d\n",
+			x / 1000, x % 1000, y / 1000, y % 1000, z / 1000, z % 1000,
+			temp / 1000, temp % 1000, humi / 1000, humi % 1000);
 
 		ThreadAPI_Sleep(1000);
 	}
