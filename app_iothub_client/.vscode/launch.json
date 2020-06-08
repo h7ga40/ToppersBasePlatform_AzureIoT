@@ -23,7 +23,6 @@
             ],
             "preLaunchCommands": [
                 "-environment-cd ${workspaceRoot}/Debug",
-                "reset_config none",
                 "-gdb-set breakpoint pending on",
                 "monitor reset init",
                 "monitor halt",
