@@ -94,7 +94,7 @@ int tickcounter_get_current_ms(TICK_COUNTER_HANDLE tick_counter, tickcounter_ms_
 		}
 		else {
 			TICK_COUNTER_INSTANCE_TAG* tick_counter_instance = (TICK_COUNTER_INSTANCE_TAG*)tick_counter;
-			tick_counter_instance->current_ms += (now - tick_counter_instance->last_clock_value) / 1000;
+			tick_counter_instance->current_ms += (now - tick_counter_instance->last_clock_value);
 			tick_counter_instance->last_clock_value = now;
 			*current_ms = tick_counter_instance->current_ms;
 			result = 0;
