@@ -2055,3 +2055,7 @@ void json_set_allocation_functions(JSON_Malloc_Function malloc_fun, JSON_Free_Fu
     parson_malloc = malloc_fun;
     parson_free = free_fun;
 }
+
+void json_set_escape_slashes(int escape_slashes) {
+    parson_escape_slashes = escape_slashes;
+}

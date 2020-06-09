@@ -158,7 +158,7 @@ static OPTIONHANDLER_HANDLE tlsio_wolfssl_retrieveoptions(CONCRETE_IO_HANDLE tls
             TLS_IO_INSTANCE* tls_io_instance = (TLS_IO_INSTANCE*)tls_io;
             if (
                 (tls_io_instance->x509certificate != NULL) &&
-                (OptionHandler_AddOption(result, SU_OPTION_X509_CERT, tls_io_instance->x509certificate) != 0)
+                (OptionHandler_AddOption(result, SU_OPTION_X509_CERT, tls_io_instance->x509certificate) != OPTIONHANDLER_OK)
                 )
             {
                 LogError("unable to save x509certificate option");
@@ -167,7 +167,7 @@ static OPTIONHANDLER_HANDLE tlsio_wolfssl_retrieveoptions(CONCRETE_IO_HANDLE tls
             }
             else if (
                 (tls_io_instance->x509privatekey != NULL) &&
-                (OptionHandler_AddOption(result, SU_OPTION_X509_PRIVATE_KEY, tls_io_instance->x509privatekey) != 0)
+                (OptionHandler_AddOption(result, SU_OPTION_X509_PRIVATE_KEY, tls_io_instance->x509privatekey) != OPTIONHANDLER_OK)
                 )
             {
                 LogError("unable to save x509privatekey option");
@@ -176,7 +176,7 @@ static OPTIONHANDLER_HANDLE tlsio_wolfssl_retrieveoptions(CONCRETE_IO_HANDLE tls
             }
             else if (
                 (tls_io_instance->certificate != NULL) &&
-                (OptionHandler_AddOption(result, OPTION_TRUSTED_CERT, tls_io_instance->certificate) != 0)
+                (OptionHandler_AddOption(result, OPTION_TRUSTED_CERT, tls_io_instance->certificate) != OPTIONHANDLER_OK)
                 )
             {
                 LogError("unable to save TrustedCerts option");
@@ -415,6 +415,18 @@ static int on_io_recv(WOLFSSL *ssl, char *buf, int sz, void *context)
     return result;
 }
 
+static void on_send_complete(void* context, IO_SEND_RESULT send_result)
+{
+	TLS_IO_INSTANCE* tls_io_instance = (TLS_IO_INSTANCE*)context;
+	if ((tls_io_instance == NULL) || (tls_io_instance->on_send_complete == NULL))
+		return;
+
+	tls_io_instance->on_send_complete(tls_io_instance->on_send_complete_callback_context, send_result);
+
+	tls_io_instance->on_send_complete = NULL;
+	tls_io_instance->on_send_complete_callback_context = NULL;
+}
+
 static int on_io_send(WOLFSSL *ssl, char *buf, int sz, void *context)
 {
     int result;
@@ -422,7 +434,7 @@ static int on_io_send(WOLFSSL *ssl, char *buf, int sz, void *context)
 
     TLS_IO_INSTANCE* tls_io_instance = (TLS_IO_INSTANCE*)context;
 
-    if (xio_send(tls_io_instance->socket_io, buf, sz, tls_io_instance->on_send_complete, tls_io_instance->on_send_complete_callback_context) != 0)
+    if (xio_send(tls_io_instance->socket_io, buf, sz, on_send_complete, tls_io_instance) != 0)
     {
         LogError("Failed sending bytes through underlying IO");
         tls_io_instance->tlsio_state = TLSIO_STATE_ERROR;
@@ -819,6 +831,11 @@ int tlsio_wolfssl_send(CONCRETE_IO_HANDLE tls_io, const void* buffer, size_t siz
             LogError("send called while not open");
             result = MU_FAILURE;
         }
+        if (tls_io_instance->on_send_complete != NULL)
+        {
+            LogError("Error writing data");
+            result = MU_FAILURE;
+        }
         else
         {
             tls_io_instance->on_send_complete = on_send_complete;
@@ -834,8 +851,6 @@ int tlsio_wolfssl_send(CONCRETE_IO_HANDLE tls_io, const void* buffer, size_t siz
             {
                 result = 0;
             }
-            tls_io_instance->on_send_complete = NULL;
-            tls_io_instance->on_send_complete_callback_context = NULL;
         }
     }
 
@@ -907,6 +922,11 @@ int tlsio_wolfssl_setoption(CONCRETE_IO_HANDLE tls_io, const char* optionName, c
         else if (strcmp(SU_OPTION_X509_PRIVATE_KEY, optionName) == 0 || strcmp(OPTION_X509_ECC_KEY, optionName) == 0)
         {
             result = process_option(&tls_io_instance->x509privatekey, optionName, value);
+        }
+        else if (strcmp(optionName, OPTION_SET_TLS_RENEGOTIATION) == 0)
+        {
+            // No need to do anything for WolfSSL
+            result = 0;
         }
 #ifdef INVALID_DEVID
         else if (strcmp(OPTION_WOLFSSL_SET_DEVICE_ID, optionName) == 0)
