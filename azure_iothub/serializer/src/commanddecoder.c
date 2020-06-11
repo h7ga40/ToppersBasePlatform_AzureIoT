@@ -730,6 +730,10 @@ METHODRETURN_HANDLE CommandDecoder_ExecuteMethod(COMMAND_DECODER_HANDLE handle, 
                 }
                 else
                 {
+                    //printf("%s %s\n", fullMethodName, methodJSON);
+                    if (strcmp(methodJSON, "null") == 0) {
+                        strcpy(methodJSON, "{}");
+                    }
                     MULTITREE_HANDLE methodTree;
                     if (JSONDecoder_JSON_To_MultiTree(methodJSON, &methodTree) != JSON_DECODER_OK)
                     {
