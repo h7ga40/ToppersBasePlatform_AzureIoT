@@ -12,7 +12,6 @@
                 "${workspaceFolder}/../asp_baseplatform/files/ff",
                 "${workspaceFolder}/../asp_baseplatform/include",
                 "${workspaceFolder}/../asp_baseplatform/target/stm32f767nucleo144_gcc",
-                "${workspaceFolder}/../asp_baseplatform/tecs_kernel",
                 "${workspaceFolder}/../asp_baseplatform/pdic/stm32f7xx",
                 "${workspaceFolder}/../asp_baseplatform/monitor",
                 "${workspaceFolder}/../asp_baseplatform/lwip",

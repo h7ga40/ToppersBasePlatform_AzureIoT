@@ -9,7 +9,6 @@
                 "${workspaceFolder}/../asp_baseplatform/arch/gcc",
                 "${workspaceFolder}/../asp_baseplatform/include",
                 "${workspaceFolder}/../asp_baseplatform/target/stm32f767nucleo144_gcc",
-                "${workspaceFolder}/../asp_baseplatform/tecs_kernel",
                 "${workspaceFolder}/../asp_baseplatform/lwip",
                 "${workspaceFolder}/../asp_baseplatform/lwip/lwip-2.1.2/src/include",
                 "${workspaceFolder}/../asp_baseplatform/lwip/contrib-2.1.0/ports/toppers/include",
