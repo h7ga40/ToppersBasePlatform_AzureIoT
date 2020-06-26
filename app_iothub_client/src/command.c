@@ -37,7 +37,7 @@ static const COMMAND_INFO device_command_info[] = {
 	{"CUP",		cup_func},
 	{"IOT",		iothub_client_main},
 	{"CSGEN",	dps_csgen_main},
-	{"CS",		set_cs_main},
+	{"SETCS",	set_cs_main},
 	{"PROXY",	set_proxy_main},
 	{"CPRX",	clear_proxy_main},
 	{"PINKIT",	pinkit_main},
@@ -54,7 +54,7 @@ static const char device_help[] =
 #endif
 "          CUP command            cup   control\n"
 "          IOT                    connect azure\n"
-"          CS             set connection string\n"
+"          SETCS          set connection string\n"
 "          CSGEN               provision device\n"
 "          PROXY                  set proxy    \n"
 "          CPRX                   clear proxy  \n"
