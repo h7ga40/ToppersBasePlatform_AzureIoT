@@ -50,3 +50,15 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+*.bin
+*.srec
+*.syms
+*.timestamp
+
+**/cfg1_out.c
+**/kernel_cfg.c
+**/kernel_cfg.h
+
+app_iothub_client/Debug/offset.h
+asp_baseplatform/OBJ/STM32F767NUCLEO144_GCC/MAC/offset.h
