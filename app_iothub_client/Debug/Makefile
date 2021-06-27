@@ -58,7 +58,7 @@ ifeq ($(SRCLANG),c)
 	LIBS = -lc -lm \
 		$(SRCDIR)/../zlib-1.2.11/Debug/libzlib.a \
 		$(SRCDIR)/../wolfssl-3.15.7/Debug/libwolfssl.a\
-		$(SRCDIR)/../azure_iothub/Debug/libazure_iothub.a
+		$(SRCDIR)/../azure_iot_sdk/Debug/libazure_iot_sdk.a
 endif
 ifeq ($(SRCLANG),c++)
 	USE_CXX = true
@@ -177,20 +177,20 @@ APPL_LIBS =
 ifdef APPLDIR
 	INCLUDES := $(INCLUDES) $(foreach dir,$(APPLDIR),-I$(dir))
 endif
-INCLUDES += -I$(SRCDIR)/../azure_iothub/certs
-INCLUDES += -I$(SRCDIR)/../azure_iothub/c-utility/inc
-INCLUDES += -I$(SRCDIR)/../azure_iothub/c-utility/pal/toppers
-INCLUDES += -I$(SRCDIR)/../azure_iothub/iothub_client/inc
-INCLUDES += -I$(SRCDIR)/../azure_iothub/iothub_client/inc/internal
-INCLUDES += -I$(SRCDIR)/../azure_iothub/provisioning_client/adapters
-INCLUDES += -I$(SRCDIR)/../azure_iothub/provisioning_client/inc
-INCLUDES += -I$(SRCDIR)/../azure_iothub/provisioning_client/inc/azure_prov_client/internal
-INCLUDES += -I$(SRCDIR)/../azure_iothub/deps/parson
-INCLUDES += -I$(SRCDIR)/../azure_iothub/deps/azure-macro-utils-c/inc
-INCLUDES += -I$(SRCDIR)/../azure_iothub/deps/umock-c/inc
-INCLUDES += -I$(SRCDIR)/../azure_iothub/serializer/inc
-INCLUDES += -I$(SRCDIR)/../azure_iothub/uhttp/inc
-INCLUDES += -I$(SRCDIR)/../azure_iothub/umqtt/inc
+INCLUDES += -I$(SRCDIR)/../azure_iot_sdk/certs
+INCLUDES += -I$(SRCDIR)/../azure_iot_sdk/c-utility/inc
+INCLUDES += -I$(SRCDIR)/../azure_iot_sdk/c-utility/pal/toppers
+INCLUDES += -I$(SRCDIR)/../azure_iot_sdk/iothub_client/inc
+INCLUDES += -I$(SRCDIR)/../azure_iot_sdk/iothub_client/inc/internal
+INCLUDES += -I$(SRCDIR)/../azure_iot_sdk/provisioning_client/adapters
+INCLUDES += -I$(SRCDIR)/../azure_iot_sdk/provisioning_client/inc
+INCLUDES += -I$(SRCDIR)/../azure_iot_sdk/provisioning_client/inc/azure_prov_client/internal
+INCLUDES += -I$(SRCDIR)/../azure_iot_sdk/deps/parson
+INCLUDES += -I$(SRCDIR)/../azure_iot_sdk/deps/azure-macro-utils-c/inc
+INCLUDES += -I$(SRCDIR)/../azure_iot_sdk/deps/umock-c/inc
+INCLUDES += -I$(SRCDIR)/../azure_iot_sdk/serializer/inc
+INCLUDES += -I$(SRCDIR)/../azure_iot_sdk/uhttp/inc
+INCLUDES += -I$(SRCDIR)/../azure_iot_sdk/umqtt/inc
 INCLUDES += -I$(SRCDIR)/../wolfssl-3.15.7/wolfssl
 INCLUDES += -I$(SRCDIR)/../wolfssl-3.15.7/wolfssl/wolfcrypt
 INCLUDES += -I$(SRCDIR)/../wolfssl-3.15.7

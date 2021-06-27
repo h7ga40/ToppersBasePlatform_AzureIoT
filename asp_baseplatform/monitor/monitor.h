@@ -74,7 +74,7 @@ extern "C" {
 #else
 #define	MONITOR_STACK_SIZE	2046	/* タスクのスタックサイズ */
 #endif
-#define	MAX_COMMAND_LENGTH	160		/* モニタの最大コマンド長 */
+#define	MAX_COMMAND_LENGTH	200		/* モニタの最大コマンド長 */
 #define	NUM_LOG_DISP		3		/* 最大表示アイテム数 */
 #ifndef MONITOR_PORTID
 #define MONITOR_PORTID      CONSOLE_PORTID

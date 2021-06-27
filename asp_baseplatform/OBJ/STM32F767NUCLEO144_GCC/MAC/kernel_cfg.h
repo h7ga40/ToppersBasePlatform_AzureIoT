@@ -1,0 +1,86 @@
+/* kernel_cfg.h */
+#ifndef TOPPERS_KERNEL_CFG_H
+#define TOPPERS_KERNEL_CFG_H
+
+#define TNUM_TSKID	12
+#define TNUM_SEMID	54
+#define TNUM_FLGID	1
+#define TNUM_DTQID	0
+#define TNUM_PDQID	0
+#define TNUM_MBXID	0
+#define TNUM_MTXID	0
+#define TNUM_MPFID	0
+#define TNUM_CYCID	0
+#define TNUM_ALMID	0
+#define TNUM_ISRID	0
+
+#define LOGTASK	1
+#define MONTASK	2
+#define LWIP_TASK_1	3
+#define LWIP_TASK_2	4
+#define LWIP_TASK_3	5
+#define LWIP_TASK_4	6
+#define LWIP_TASK_5	7
+#define LWIP_TASK_6	8
+#define LWIP_TASK_7	9
+#define LWIP_TASK_8	10
+#define LWIP_TASK_N	11
+#define MAIN_TASK1	12
+#define SERIAL_RCV_SEM1	1
+#define SERIAL_SND_SEM1	2
+#define SERIAL_RCV_SEM2	3
+#define SERIAL_SND_SEM2	4
+#define DMA2DSEM	5
+#define DMA2DTRNSEM	6
+#define RTCSEM	7
+#define TLSF_SEM	8
+#define LWIP_PROTECT	9
+#define LWIP_THREAD	10
+#define LWIP_SNPRINTF	11
+#define LWIP_LOCK_1	12
+#define LWIP_LOCK_2	13
+#define LWIP_LOCK_3	14
+#define LWIP_LOCK_4	15
+#define LWIP_LOCK_5	16
+#define LWIP_LOCK_6	17
+#define LWIP_LOCK_7	18
+#define LWIP_LOCK_8	19
+#define LWIP_LOCK_9	20
+#define LWIP_LOCK_10	21
+#define LWIP_LOCK_11	22
+#define LWIP_LOCK_12	23
+#define LWIP_LOCK_13	24
+#define LWIP_LOCK_N	25
+#define LWIP0_SEM_1	26
+#define LWIP0_SEM_2	27
+#define LWIP0_SEM_3	28
+#define LWIP0_SEM_4	29
+#define LWIP0_SEM_5	30
+#define LWIP0_SEM_6	31
+#define LWIP0_SEM_7	32
+#define LWIP0_SEM_8	33
+#define LWIP0_SEM_9	34
+#define LWIP0_SEM_10	35
+#define LWIP0_SEM_11	36
+#define LWIP0_SEM_12	37
+#define LWIP0_SEM_13	38
+#define LWIP0_SEM_14	39
+#define LWIP0_SEM_15	40
+#define LWIP0_SEM_16	41
+#define LWIP0_SEM_17	42
+#define LWIP0_SEM_18	43
+#define LWIP0_SEM_19	44
+#define LWIP0_SEM_20	45
+#define LWIP0_SEM_21	46
+#define LWIP0_SEM_22	47
+#define LWIP0_SEM_23	48
+#define LWIP0_SEM_24	49
+#define LWIP0_SEM_25	50
+#define LWIP0_SEM_26	51
+#define LWIP0_SEM_27	52
+#define LWIP0_SEM_N	53
+#define SEM_GMAC_MDIO	54
+#define FLG_GMAC	1
+
+#endif /* TOPPERS_KERNEL_CFG_H */
+

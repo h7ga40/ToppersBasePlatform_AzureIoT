@@ -195,5 +195,3 @@ get_cup_command(void)
 	cup_command = 0;
 	return cmd;
 }
-
-

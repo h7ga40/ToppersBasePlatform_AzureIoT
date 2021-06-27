@@ -5,14 +5,14 @@
             "name": "Cortex Debug",
             "armToolchainPath": "C:\\Program Files (x86)\\GNU Tools ARM Embedded\\9 2019-q4-major\\bin",
             "serverpath": "C:\\Program Files\\GNU MCU Eclipse\\OpenOCD\\0.10.0-12-20190422-2015\\bin\\openocd.exe",
-            "cwd": "${workspaceRoot}\\Debug",
-            "executable": "${workspaceRoot}\\Debug\\${workspaceFolderBasename}.elf",
+            "cwd": "${workspaceFolder}\\Debug",
+            "executable": "${workspaceFolder}\\Debug\\${workspaceFolderBasename}.elf",
             "request": "launch",
             "type": "cortex-debug",
             "servertype": "openocd",
             "device": "STM32F767ZI",
             "interface": "swd",
-            "svdFile": "${workspaceRoot}\\..\\STM32F7x7.svd",
+            "svdFile": "${workspaceFolder}\\..\\STM32F7x7.svd",
             "configFiles": [
                 "board/st_nucleo_f7.cfg"
             ],
@@ -22,7 +22,7 @@
                 "gdb_memory_map disable"
             ],
             "preLaunchCommands": [
-                "-environment-cd ${workspaceRoot}/Debug",
+                "-environment-cd ${workspaceFolder}/Debug",
                 "-gdb-set breakpoint pending on",
                 "monitor reset init",
                 "monitor halt",
@@ -30,7 +30,7 @@
                 "load ${workspaceFolderBasename}.elf",
                 "enable breakpoint"
             ],
-            //"preLaunchTask": "build app_iothub_client"
+            "preLaunchTask": "build ${workspaceFolderBasename}"
         }
     ]
 }

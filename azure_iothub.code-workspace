@@ -7,7 +7,7 @@
 			"path": "asp_baseplatform"
 		},
 		{
-			"path": "azure_iothub"
+			"path": "azure_iot_sdk"
 		},
 		{
 			"path": "wolfssl-3.15.7"

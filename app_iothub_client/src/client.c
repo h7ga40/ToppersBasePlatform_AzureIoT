@@ -536,7 +536,7 @@ void iothub_client_init()
 int iothub_client_main(int argc, char **argv)
 {
 	if (connectionString == NULL) {
-		printf("Not set connection string, use 'device csgen' or 'device cs'.\n");
+		printf("Not set connection string, use 'device csgen' or 'device setcs'.\n");
 		return 0;
 	}
 
