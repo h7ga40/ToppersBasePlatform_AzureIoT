@@ -19,9 +19,9 @@
                 "${workspaceFolder}/../azure_iot_sdk/iothub_client/inc/internal",
                 "${workspaceFolder}/../azure_iot_sdk/deps/parson",
                 "${workspaceFolder}/../azure_iot_sdk/umqtt/inc",
-                "${workspaceFolder}/../wolfssl-3.15.7/wolfssl",
-                "${workspaceFolder}/../wolfssl-3.15.7/wolfssl/wolfcrypt",
-                "${workspaceFolder}/../wolfssl-3.15.7",
+                "${workspaceFolder}/../wolfssl-4.7.0/wolfssl",
+                "${workspaceFolder}/../wolfssl-4.7.0/wolfssl/wolfcrypt",
+                "${workspaceFolder}/../wolfssl-4.7.0",
                 "${workspaceFolder}/../zlib-1.2.11/src"
             ],
             "defines": [

@@ -173,9 +173,9 @@ INCLUDE_PATHS += -I../../azure_iot_sdk/deps/uhttp/inc
 INCLUDE_PATHS += -I../../azure_iot_sdk/deps/umock-c/inc
 INCLUDE_PATHS += -I../../azure_iot_sdk/serializer/inc
 INCLUDE_PATHS += -I../../azure_iot_sdk/umqtt/inc
-INCLUDE_PATHS += -I../../wolfssl-3.15.7/wolfssl
-INCLUDE_PATHS += -I../../wolfssl-3.15.7/wolfssl/wolfcrypt
-INCLUDE_PATHS += -I../../wolfssl-3.15.7
+INCLUDE_PATHS += -I../../wolfssl-4.7.0/wolfssl
+INCLUDE_PATHS += -I../../wolfssl-4.7.0/wolfssl/wolfcrypt
+INCLUDE_PATHS += -I../../wolfssl-4.7.0
 INCLUDE_PATHS += -I../../zlib-1.2.11/src
 
 # Objects and Paths
@@ -213,7 +213,8 @@ C_FLAGS += -Wno-unused-function
 C_FLAGS += -g3
 C_FLAGS += -Wstack-usage=256
 
-C_FLAGS += -D__MBED__=1
+C_FLAGS += -DWOLFSSL_USER_SETTINGS
+C_FLAGS += -DCYASSL_USER_SETTINGS
 C_FLAGS += -DUSE_WOLFSSL=1
 C_FLAGS += -DHSM_TYPE_SYMM_KEY
 C_FLAGS += -DUSE_PROV_MODULE
@@ -240,7 +241,8 @@ CXX_FLAGS += -Wnull-dereference
 CXX_FLAGS += -g3
 CXX_FLAGS += -Wstack-usage=256
 
-CXX_FLAGS += -D__MBED__=1
+CXX_FLAGS += -DWOLFSSL_USER_SETTINGS
+CXX_FLAGS += -DCYASSL_USER_SETTINGS
 CXX_FLAGS += -DUSE_WOLFSSL=1
 CXX_FLAGS += -DHSM_TYPE_SYMM_KEY
 CXX_FLAGS += -DUSE_PROV_MODULE

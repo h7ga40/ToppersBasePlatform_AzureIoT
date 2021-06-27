@@ -57,7 +57,7 @@ SRCLANG = c
 ifeq ($(SRCLANG),c)
 	LIBS = -lc -lm \
 		$(SRCDIR)/../zlib-1.2.11/Debug/libzlib.a \
-		$(SRCDIR)/../wolfssl-3.15.7/Debug/libwolfssl.a\
+		$(SRCDIR)/../wolfssl-4.7.0/Debug/libwolfssl.a\
 		$(SRCDIR)/../azure_iot_sdk/Debug/libazure_iot_sdk.a
 endif
 ifeq ($(SRCLANG),c++)
@@ -191,9 +191,9 @@ INCLUDES += -I$(SRCDIR)/../azure_iot_sdk/deps/umock-c/inc
 INCLUDES += -I$(SRCDIR)/../azure_iot_sdk/serializer/inc
 INCLUDES += -I$(SRCDIR)/../azure_iot_sdk/uhttp/inc
 INCLUDES += -I$(SRCDIR)/../azure_iot_sdk/umqtt/inc
-INCLUDES += -I$(SRCDIR)/../wolfssl-3.15.7/wolfssl
-INCLUDES += -I$(SRCDIR)/../wolfssl-3.15.7/wolfssl/wolfcrypt
-INCLUDES += -I$(SRCDIR)/../wolfssl-3.15.7
+INCLUDES += -I$(SRCDIR)/../wolfssl-4.7.0/wolfssl
+INCLUDES += -I$(SRCDIR)/../wolfssl-4.7.0/wolfssl/wolfcrypt
+INCLUDES += -I$(SRCDIR)/../wolfssl-4.7.0
 INCLUDES += -I$(SRCDIR)/../zlib-1.2.11/src
 
 #  ミドルウェアの Makefile のインクルード
